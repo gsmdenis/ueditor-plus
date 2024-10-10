@@ -46,6 +46,11 @@
     }
 
     function setEndPoint(toStart, node, offset, range) {
+        // 检查 node 是否为 null Denis
+        if (!node) {
+           // console.error("Node is null");
+            return range;  // 或者抛出错误 throw new Error("Node is null");
+        }
         //如果node是自闭合标签要处理
         if (
             node.nodeType === 1 &&
